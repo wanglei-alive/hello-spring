@@ -36,7 +36,7 @@ echo "WORKSPACE:"$WORKSPACE
     -XX:+PrintHeapAtGC
     -Xloggc:log/gc.log
     -Djava.io.tmpdir=runtime
-    -jar $MAIN2"
+    -jar $CLASSPATH $MAIN2"
 
 
 echo $START_COMMAND2
