@@ -9,7 +9,7 @@ readonly JDK="jdk1.8.0_111"
 readonly PIDFILE="$WORKSPACE/runtime/demo.pid"
 readonly STDOUT="$WORKSPACE/log/application.out"
 readonly MAIN2=com.example.demo.DemoApplication
-readonly CLASSPATH="$WORKSPACE/resources:$WORKSPACE/lib/demo*"
+readonly CLASSPATH="$WORKSPACE/lib/demo*"
 readonly JAVA=$WORKSPACE/$JDK/bin/java
 readonly PATH="/usr/sbin:/usr/bin:/sbin:/bin:$WORKSPACE/$JDK/bin"
 
@@ -36,7 +36,7 @@ echo "WORKSPACE:"$WORKSPACE
     -XX:+PrintHeapAtGC
     -Xloggc:log/gc.log
     -Djava.io.tmpdir=runtime
-    -cp $CLASSPATH $MAIN2"
+    -jar $MAIN2"
 
 
 echo $START_COMMAND2
@@ -119,7 +119,7 @@ start()
     # when restart try signal
     signal
 
-    echo "starting ark-web..."
+    echo "starting demo..."
 
     export LC_ALL="en_US.UTF-8"
     export LANG="en_US.UTF-8"
