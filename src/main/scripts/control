@@ -9,7 +9,7 @@ readonly JDK="jdk1.8.0_111"
 readonly PIDFILE="$WORKSPACE/runtime/demo.pid"
 readonly STDOUT="$WORKSPACE/log/application.out"
 readonly MAIN2=com.example.demo.DemoApplication
-readonly CLASSPATH="$WORKSPACE/resources:$WORKSPACE/lib/*"
+readonly CLASSPATH="$WORKSPACE/resources:$WORKSPACE/lib/demo*"
 readonly JAVA=$WORKSPACE/$JDK/bin/java
 readonly PATH="/usr/sbin:/usr/bin:/sbin:/bin:$WORKSPACE/$JDK/bin"
 
@@ -22,9 +22,9 @@ echo "WORKSPACE:"$WORKSPACE
 
 
     START_COMMAND2="$JAVA
-    -Xmx1g
-    -Xms1g
-    -Xmn512m
+    -Xmx512m
+    -Xms512m
+    -Xmn256m
     -XX:MaxDirectMemorySize=64m
     -XX:+UseG1GC
     -XX:+HeapDumpOnOutOfMemoryError
