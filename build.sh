@@ -15,21 +15,13 @@ export LANG="en_US.UTF-8"
 
 Prompt "Setting up environment variables OK..."
 
-
 OUTPUT=$WORKSPACE/target/demo-1.0-SNAPSHOT-all/output
 
 Prompt "Clean and Package"
-mvn clean -s settings.xml -U package -Dmaven.test.skip=true -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2 || exit $?
+mvn clean -U package -Dmaven.test.skip=true -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2 || exit $?
 Prompt "Package for deploy"
 rm -fr $WORKSPACE/output
 mv $OUTPUT ./
-
-mkdir $WORKSPACE/output/opbin
-
-Prompt "Generate version and timestamp..."
-echo $(date -d  today +%Y%m%d%H%M%S) > $WORKSPACE/output/version
-git log | head -1 | awk '{print $2}' >> $WORKSPACE/output/version
-Prompt "version::"`cat $WORKSPACE/output/version`
 
 Prompt "download jdk"
 curl http://code-deploy-plugin.oss.cn-north-1.jcloudcs.com/jdk-8u111-linux-x64.tar.gz > $WORKSPACE/output/jdk-8u111-linux-x64.tar.gz
