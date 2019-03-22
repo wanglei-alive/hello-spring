@@ -1,0 +1,10 @@
+files:
+  - source: /
+    destination: /home/demo
+hooks:
+  ApplicationStart:
+    - location: /home/demo/bin/start.sh
+      timeout: 10
+      runas: root
+permisssions: {}
+env: {}
