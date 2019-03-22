@@ -26,6 +26,8 @@ mv $OUTPUT ./
 Prompt "download jdk"
 curl http://code-deploy-plugin.oss.cn-north-1.jcloudcs.com/jdk-8u111-linux-x64.tar.gz > $WORKSPACE/output/jdk-8u111-linux-x64.tar.gz
 
+mv appSpec.yml $WORKSPACE/output/appSpec.yml
+
 Prompt "build finish exit:"$?
 
 exit $?
