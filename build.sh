@@ -24,7 +24,7 @@ rm -fr $WORKSPACE/output
 mv $OUTPUT ./
 
 Prompt "download jdk"
-curl https://tony.oss.cn-north-1.jcloudcs.com/test-wl-0228/jdk-8u181-linux-x64.tar.gz > $WORKSPACE/output/jdk-8u111-linux-x64.tar.gz
+curl https://test-deploy-wl-0330.oss.cn-east-2.jcloudcs.com/deps/jdk-8u111-linux-x64.tar.gz > $WORKSPACE/output/jdk-8u111-linux-x64.tar.gz
 
 mv appSpec.yml $WORKSPACE/output/appSpec.yml
 
