@@ -4,7 +4,7 @@ files:
 hooks:
   ApplicationStart:
     - location: /home/demo/bin/start.sh
-      timeout: 10
+      timeout: 60
       runas: root
 permisssions: {}
 env: {}
